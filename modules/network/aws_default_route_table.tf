@@ -7,6 +7,6 @@ resource "aws_default_route_table" "route_table_default" {
   }
 
   tags = {
-    Name = "rt_default"
+    Name = format("%s_route_table", var.env)
   }
 }

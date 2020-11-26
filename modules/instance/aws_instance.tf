@@ -1,13 +1,13 @@
 resource "aws_instance" "web" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
-  subnet_id                   = aws_subnet.public.id
+  subnet_id                   = var.subnet_id.id
   associate_public_ip_address = "true"
-  user_data                     = file("./script.sh")
+  user_data                     = var.user_data
   key_name                    = var.key_name
-  security_groups             = [aws_security_group.WebServer.id, ]
+  security_groups             = var.security_groups
 
   tags = {
-    Name = var.name
+    Name = format("%s_WebServer", var.env)
   }
 }
