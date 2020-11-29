@@ -1,9 +1,9 @@
 output "subnet_public" {
-    value = aws_subnet.public
+  value = aws_subnet.public
 }
 
 output "subnet_private" {
-    value = aws_subnet.private
+  value = aws_subnet.private
 }
 
 output "vpc" {

@@ -1,3 +1,3 @@
 output "sg" {
-    value = aws_security_group.WebServer
+  value = aws_security_group.WebServer
 }
